@@ -10,6 +10,12 @@ https://github.com/fchollet/keras/blob/master/examples/lstm_text_generation.py
 
 from __future__ import print_function
 
+
+#---------WORKAROUND----------#
+import tensorflow as tf
+tf.python.control_flow_ops = tf
+
+
 from keras.models import Sequential
 from keras.layers.core import Dense, Activation, Dropout
 from keras.layers.recurrent import LSTM

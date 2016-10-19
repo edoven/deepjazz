@@ -18,6 +18,8 @@ GPU run command:
 from __future__ import print_function
 import sys
 
+import sys
+sys.path.append('/home/godzy/Downloads/music21-3.1.0/build/lib.linux-x86_64-2.7/music21')  
 from music21 import *
 import numpy as np
 
@@ -159,6 +161,8 @@ def generate(data_fn, out_fn, N_epochs):
 
         curr_offset += 4.0
 
+    
+
     out_stream.insert(0.0, tempo.MetronomeMark(number=bpm))
 
     # Play the final stream through output (see 'play' lambda function above)
@@ -181,6 +185,7 @@ def main(args):
 
     # i/o settings
     data_fn = 'midi/' + 'original_metheny.mid' # 'And Then I Knew' by Pat Metheny 
+    #data_fn = 'midi/' + 'omalley.mid' # 'And Then I Knew' by Pat Metheny 
     out_fn = 'midi/' 'deepjazz_on_metheny...' + str(N_epochs)
     if (N_epochs == 1): out_fn += '_epoch.midi'
     else:               out_fn += '_epochs.midi'
